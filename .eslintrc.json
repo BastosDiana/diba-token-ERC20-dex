@@ -1,0 +1,19 @@
+{
+  "env": {
+    "es6": true,
+    "node": true,
+    "truffle/globals": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module"
+  },
+  "globals": {
+    "artifacts": "readonly",
+    "contract": "readonly",
+    "web3": "readonly"
+  },
+  "rules": {
+    "no-undef": "off"
+  }
+}
