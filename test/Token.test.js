@@ -1,4 +1,4 @@
-const { ether, EVM_REVERT } = require("./helpers");
+const { ether, EVM_REVERT_BALANCE } = require("./helpers");
 const chai = require("chai");
 const chaiAsPromised = require("chai-as-promised");
 const Token = artifacts.require("./Token");
@@ -82,13 +82,13 @@ contract("Token", ([deployer, receiver, exchange]) => {
         // Greater than total supply
         await token
           .transfer(receiver, invalidAmount, { from: deployer })
-          .should.be.rejectedWith(EVM_REVERT);
+          .should.be.rejectedWith(EVM_REVERT_BALANCE);
 
         // Transfer tokens from de receiver to the deployer
         invalidAmount = ether(10); // recipient has no tokens
         await token
           .transfer(deployer, invalidAmount, { from: receiver })
-          .should.be.rejectedWith(EVM_REVERT);
+          .should.be.rejectedWith(EVM_REVERT_BALANCE);
       });
 
       it("rejects invalid recipients", async () => {
@@ -179,7 +179,7 @@ contract("Token", ([deployer, receiver, exchange]) => {
         const invalidAmount = ether(100000000);
         token
           .transferFrom(deployer, receiver, invalidAmount, { from: exchange })
-          .should.be.rejectedWith(EVM_REVERT);
+          .should.be.rejectedWith(EVM_REVERT_BALANCE);
       });
 
       xit("rejects invalid recipients", async () => {
