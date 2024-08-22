@@ -6,6 +6,7 @@
   "private": true,
   "homepage": ".",
   "dependencies": {
+    "@craco/craco": "^7.1.0",
     "@openzeppelin/contracts": "^4.8.1",
     "bootstrap": "^5.3.3",
     "chai": "^4.3.4",
@@ -13,12 +14,13 @@
     "chai-bignumber": "^3.1.0",
     "dotenv": "^16.4.5",
     "glob": "^11.0.0",
+    "global": "^4.4.0",
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.1",
     "react-bootstrap": "^2.10.4",
     "react-dom": "^18.2.0",
     "react-redux": "^9.1.2",
-    "react-scripts": "^3.0.1",
+    "react-scripts": "^5.0.1",
     "redux": "^5.0.1",
     "reselect": "^5.1.1",
     "solidity-coverage": "^0.7.22",
@@ -26,13 +28,13 @@
     "truffle-hdwallet-provider-privkey": "^0.0.4",
     "uuid": "^10.0.0",
     "web-vitals": "^4.2.2",
-    "web3": "^4.11.1",
+    "web3": "^4.12.0",
     "web3-provider-engine": "^17.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -45,8 +47,21 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/plugin-proposal-optional-chaining": "^7.21.0",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-react": "^7.24.7",
     "eslint": "^6.8.0",
     "eslint-plugin-truffle": "^0.3.1",
     "truffle": "^5.11.5"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-optional-chaining"
+    ]
   }
 }

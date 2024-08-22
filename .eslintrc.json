@@ -15,5 +15,12 @@
   },
   "rules": {
     "no-undef": "off"
-  }
+  },
+  "plugins": [
+    "truffle"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:truffle/recommended"
+  ]
 }
